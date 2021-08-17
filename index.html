@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Awesome books project</title>
+</head>
+<body>
+    <section class="booksCollection">
+        <h2>Awesome Books</h2>
+        <div id="booksList">
+            <template id="book" class="myBook">
+                <p id="bookName">Lorem Ipsum</p>
+                <p id="bookAuthor">Testeroo Testyy</p>
+                <button id="removeBook">Remove</button>
+                <hr id="bookLine">
+            </template>
+        </div>
+        <br><br>
+    </section>
+    <section class="addBook">
+        <input type="text" id="addTitle" name="book_title" placeholder="Title" required><br><br>
+        <input type="text" id="addAuthor" name="book_author" placeholder="Author" required><br><br>
+        <input type="submit" id="addBook" value="Add">
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>
