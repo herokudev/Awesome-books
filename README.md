@@ -17,6 +17,13 @@ Herbert Orellana
 - GitHub: [@herokudev](https://github.com/herokudev)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/armando-orellana-a0b50b34)
 
+
+## Author (Github: KingsleyMcSimon)
+Kingsley McSimon Ogbonna
+
+  - Github: [@kingsleymcsimon](https://github.com/KingsleyMcSimon)
+  - LinkedIn: [LinkedIn](https://www.linkedin.com/in/kingsley-mcsimon-o-44411517a/)
+
 ## Live Demo
 
 [Live Demo Link](https://herokudev.github.io/Awesome-books/)
@@ -28,6 +35,11 @@ Herbert Orellana
 
 - GitHub: [@herokudev](https://github.com/herokudev)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/armando-orellana-a0b50b34)
+
+
+👤 **Author2** (Github: KingsleyMcSimon)
+  - Github: [@kingsleymcsimon](https://github.com/KingsleyMcSimon)
+  - LinkedIn: [LinkedIn](https://www.linkedin.com/in/kingsley-mcsimon-o-44411517a/)
 
 ## 🤝 Contributing
 
