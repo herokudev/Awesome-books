@@ -19,7 +19,7 @@ Herbert Orellana
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://herokudev.github.io/Awesome-books/)
 
 ## Authors
 
