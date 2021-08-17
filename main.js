@@ -4,6 +4,7 @@ const book = document.querySelector('#book');
 const addTitle = document.querySelector('#addTitle');
 const addAuthor = document.querySelector('#addAuthor');
 const btnAddBook = document.querySelector('#addBook');
+const objBook = { id: '', title: '', author: '' };
 
 class Library {
   constructor() {
@@ -28,8 +29,8 @@ class Library {
     objBook.id = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
     objBook.title = addTitle.value;
     objBook.author = addAuthor.value;
-    myLibrary.books.push(objBook);
-    window.localStorage.setItem('booksList', JSON.stringify(myLibrary.books));
+    this.books.push(objBook);
+    window.localStorage.setItem('booksList', JSON.stringify(this.books));
     const temp1 = book.content;
     const book1 = document.importNode(temp1, true);
     const bookTitle1 = book1.querySelector('#bookName');
@@ -42,12 +43,11 @@ class Library {
   }
 
   static removeBook() {
-    localStorage.setItem('booksList', JSON.stringify(myLibrary.books));
+    localStorage.setItem('booksList', JSON.stringify(this.books));
   }
 }
 
 let myLibrary = new Library();
-const objBook = { id: '', title: '', author: '' };
 
 document.addEventListener('DOMContentLoaded', () => {
   const lsLoad = JSON.parse(localStorage.getItem('booksList'));
@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
     myLibrary.books = JSON.parse(localStorage.getItem('booksList'));
   }
   myLibrary.displayBooks();
-
 });
 
 btnAddBook.addEventListener('click', () => {
