@@ -8,32 +8,39 @@ let books = [];
 const objBook = { id: '', title: '', author: '' };
 
 document.addEventListener('DOMContentLoaded', () => {
-  books = JSON.parse(localStorage.getItem('booksList'));
-  if (books !== null) {
-    books.forEach((book) => {
-      const div = document.createElement('div');
-      div.classList.add('myBook');
-      div.innerHTML = `
+  const lsLoad = JSON.parse(localStorage.getItem('booksList'));
+  if (lsLoad === null) {
+    books = [];
+  } else {
+    books = JSON.parse(localStorage.getItem('booksList'));
+  }  
+  books.forEach((book) => {
+    const div = document.createElement('div');
+    div.classList.add('myBook');
+    div.innerHTML = `
     <h5>${book.title}</h5>  
     <p>${book.author}</p>  
     <button class="remove">remove</button>
     <hr>
     `;
       booksList.appendChild(div);
-    });
-  }
+  });
+  
 });
 
 btnAddBook.addEventListener('click', () => {
-  books = JSON.parse(localStorage.getItem('booksList'));
-  if (books !== null) {
-    objBook.id = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
-    objBook.title = addTitle.value;
-    objBook.author = addAuthor.value;
-    books.push(objBook);
-    localStorage.setItem('booksList', JSON.stringify(books));
-  }
-
+  const lsAdd = JSON.parse(localStorage.getItem('booksList'));
+  if (lsAdd === null) {
+    books = [];
+  } else {
+    books = JSON.parse(localStorage.getItem('booksList'));
+  }  
+  objBook.id = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+  objBook.title = addTitle.value;
+  objBook.author = addAuthor.value;
+  books.push(objBook);
+  window.localStorage.setItem('booksList', JSON.stringify(books));
+  
   const temp1 = book.content;
   const book1 = document.importNode(temp1, true);
   const bookTitle1 = book1.querySelector('#bookName');
