@@ -10,7 +10,7 @@ class Library {
     this.books = [];
   }
 
-  displayBooks() {
+  static displayBooks() {
     myLibrary.books.forEach((book) => {
       const div = document.createElement('div');
       div.classList.add('myBook');
@@ -24,7 +24,7 @@ class Library {
     });
   }
 
-  addBook() {
+  static addBook() {
     objBook.id = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
     objBook.title = addTitle.value;
     objBook.author = addAuthor.value;
@@ -41,7 +41,7 @@ class Library {
     addAuthor.value = '';
   }
 
-  removeBook() {
+  static removeBook() {
     localStorage.setItem('booksList', JSON.stringify(myLibrary.books));
   }
 }
