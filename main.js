@@ -39,7 +39,6 @@ btnAddBook.addEventListener('click', () => {
   objBook.author = addAuthor.value;
   books.push(objBook);
   window.localStorage.setItem('booksList', JSON.stringify(books));
-  
   const temp1 = book.content;
   const book1 = document.importNode(temp1, true);
   const bookTitle1 = book1.querySelector('#bookName');
