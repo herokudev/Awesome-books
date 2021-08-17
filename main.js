@@ -47,7 +47,7 @@ class Library {
   }
 }
 
-let myLibrary = new Library();
+const myLibrary = new Library();
 
 document.addEventListener('DOMContentLoaded', () => {
   const lsLoad = JSON.parse(localStorage.getItem('booksList'));
