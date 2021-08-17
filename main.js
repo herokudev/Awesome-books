@@ -6,11 +6,10 @@ const btnAddBook = document.querySelector('#addBook');
 
 class Library {
   constructor() {
-    this.books = [];    
+    this.books = [];
   }
 
   displayBooks() {
-    console.log('METHOD displayBooks');
     myLibrary.books.forEach((book) => {
       const div = document.createElement('div');
       div.classList.add('myBook');
@@ -25,7 +24,6 @@ class Library {
   }
 
   addBook() {
-    console.log('METHOD addBook');
     objBook.id = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
     objBook.title = addTitle.value;
     objBook.author = addAuthor.value;
@@ -37,14 +35,13 @@ class Library {
     const bookAuthor1 = book1.querySelector('#bookAuthor');
     bookTitle1.textContent = addTitle.value;
     bookAuthor1.textContent = addAuthor.value;
-    booksList.appendChild(book1);  
+    booksList.appendChild(book1);
     addTitle.value = '';
-    addAuthor.value = '';    
+    addAuthor.value = '';
   }
 
   removeBook() {
-    console.log('METHOD removeBook');
-    localStorage.setItem('booksList', JSON.stringify(myLibrary.books));  
+    localStorage.setItem('booksList', JSON.stringify(myLibrary.books));
   }
 }
 
@@ -90,6 +87,6 @@ booksList.addEventListener('click', (e) => {
     if (book.author === e.target.previousElementSibling.textContent) {
       myLibrary.books.splice(index, 1);
     }
-  });      
+  });
   myLibrary.removeBook();
 });
