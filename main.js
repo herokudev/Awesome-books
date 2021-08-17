@@ -11,7 +11,7 @@ class Library {
   }
 
   static displayBooks() {
-    myLibrary.books.forEach((book) => {
+    this.books.forEach((book) => {
       const div = document.createElement('div');
       div.classList.add('myBook');
       div.innerHTML = `
