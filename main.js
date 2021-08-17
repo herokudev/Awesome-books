@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     books = [];
   } else {
     books = JSON.parse(localStorage.getItem('booksList'));
-  }  
+  }
   books.forEach((book) => {
     const div = document.createElement('div');
     div.classList.add('myBook');
@@ -23,9 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
     <button class="remove">remove</button>
     <hr>
     `;
-      booksList.appendChild(div);
+    booksList.appendChild(div);
   });
-  
 });
 
 btnAddBook.addEventListener('click', () => {
@@ -34,7 +33,7 @@ btnAddBook.addEventListener('click', () => {
     books = [];
   } else {
     books = JSON.parse(localStorage.getItem('booksList'));
-  }  
+  }
   objBook.id = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
   objBook.title = addTitle.value;
   objBook.author = addAuthor.value;
