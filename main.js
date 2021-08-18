@@ -71,7 +71,6 @@ class Library {
       localStorage.setItem('booksList', JSON.stringify(newBooks));
     }
   }
-  
 }
 
 const myLibrary = new Library();
