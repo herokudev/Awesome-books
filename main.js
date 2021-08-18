@@ -11,15 +11,39 @@ class Library {
     this.books = [];
   }
   displayBooks() {
-    console.log("displayBooks METHOD")
+    console.log("displayBooks METHOD");
+    const newBooks = JSON.parse(localStorage.getItem('booksList'));
+    if (newBooks === null) {
+        console.log('No books on local storage');
+    } else {
+      this.books = newBooks;
+      console.log('WE HAVE BOOKS');
+    }
+
   }
   
   addBook() {
-    console.log("addBook METHOD")
+    console.log("addBook METHOD");
+    const newBooks = JSON.parse(localStorage.getItem('booksList'));
+    if (newBooks === null) {
+        console.log('No books on local storage');
+    } else {
+      this.books = newBooks;
+      console.log('WE HAVE BOOKS');
+    }
+
   }
   
   removeBook() {
-    console.log("removeBook METHOD")
+    console.log("removeBook METHOD");
+    const newBooks = JSON.parse(localStorage.getItem('booksList'));
+    if (newBooks === null) {
+        console.log('No books on local storage');
+    } else {
+      this.books = newBooks;
+      console.log('WE HAVE BOOKS');
+    }
+
   }
   
 }
@@ -30,5 +54,5 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('Page fully loaded');
   myLibrary.displayBooks();
   myLibrary.addBook();
-  myLibrary.addBook();  
+  myLibrary.removeBook();  
 });
