@@ -68,7 +68,7 @@ class Library {
           newBooks.splice(index, 1);
         }
       });
-      localStorage.setItem('booksList', JSON.stringify(newBooks));  
+      localStorage.setItem('booksList', JSON.stringify(newBooks));
     }
   }
 }
