@@ -31,7 +31,7 @@ class Library {
     }
   }
 
-  addBook() { 
+  addBook() {
     const newBooks = JSON.parse(localStorage.getItem('booksList'));
     if (newBooks === null) {
       this.books = [];
@@ -49,9 +49,8 @@ class Library {
       bookTitle1.textContent = addTitle.value;
       bookAuthor1.textContent = addAuthor.value;
       booksList.appendChild(book1);
-    
       addTitle.value = '';
-      addAuthor.value = '';      
+      addAuthor.value = '';
     }
   }
 
@@ -69,25 +68,21 @@ class Library {
           newBooks.splice(index, 1);
         }
       });
-      localStorage.setItem('booksList', JSON.stringify(newBooks));      
+      localStorage.setItem('booksList', JSON.stringify(newBooks));  
     }
-  } 
+  }
 }
 
 const myLibrary = new Library();
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Page fully loaded');
   myLibrary.displayBooks();
 });
 
 btnAddBook.addEventListener('click', () => {
-  console.log('addBook METHOD');
   myLibrary.addBook();
 });
 
 booksList.addEventListener('click', (e) => {
-  console.log('addBook METHOD');
   myLibrary.removeBook(e.target);
-  console.log('book DELETED');
 });
