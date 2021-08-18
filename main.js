@@ -15,6 +15,7 @@ class Library {
     const newBooks = JSON.parse(localStorage.getItem('booksList'));
     if (newBooks === null) {
       this.books = [];
+      localStorage.setItem('booksList', JSON.stringify(this.books));
     } else {
       this.books = newBooks;
       this.books.forEach((book) => {
@@ -35,13 +36,14 @@ class Library {
     const newBooks = JSON.parse(localStorage.getItem('booksList'));
     if (newBooks === null) {
       this.books = [];
+      localStorage.setItem('booksList', JSON.stringify(this.books));
     } else {
       this.books = newBooks;
       objBook.id = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
       objBook.title = addTitle.value;
       objBook.author = addAuthor.value;
       this.books.push(objBook);
-      window.localStorage.setItem('booksList', JSON.stringify(this.books));
+      localStorage.setItem('booksList', JSON.stringify(this.books));
       const temp1 = book.content;
       const book1 = document.importNode(temp1, true);
       const bookTitle1 = book1.querySelector('#bookName');
