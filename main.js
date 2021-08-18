@@ -9,7 +9,7 @@ const objBook = { id: '', title: '', author: '' };
 class Library {
   constructor() {
     this.books = [];
-  }  
+  }
 
   displayBooks() {
     console.log('displayBooks METHOD');
@@ -26,7 +26,7 @@ class Library {
     console.log('addBook METHOD');
     const newBooks = JSON.parse(localStorage.getItem('booksList'));
     if (newBooks === null) {
-        console.log('No books on local storage');
+      console.log('No books on local storage');
     } else {
       this.books = newBooks;
       console.log('WE HAVE BOOKS');
@@ -37,7 +37,7 @@ class Library {
     console.log('removeBook METHOD');
     const newBooks = JSON.parse(localStorage.getItem('booksList'));
     if (newBooks === null) {
-        console.log('No books on local storage');
+      console.log('No books on local storage');
     } else {
       this.books = newBooks;
       console.log('WE HAVE BOOKS');
