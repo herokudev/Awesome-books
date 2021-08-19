@@ -9,6 +9,34 @@ body {
   background-color: white;
 }
 
+.border {
+  border: solid 1px black;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.center > h1,
+h2 {
+  text-align: center;
+}
+
+.form-in {
+  width: 30vw;
+  padding: 1em;
+}
+
+.form-group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  width: 60%;
+}
+
 #books-container {
   border: 3px gray solid;
   width: 65%;
@@ -18,35 +46,6 @@ body {
 .separator {
   width: 10%;
   margin-left: 38%;
-}
-
-.form-title {
-  width: 85%;
-  text-align: center;
-  margin: 15px 0 15px 0;
-}
-
-.addBook-container {
-  width: 45%;
-  margin-left: 25%;
-}
-
-.book_title {
-  width: 300px;
-  margin-left: 15%;
-  margin-bottom: 5px;
-}
-
-.book_author {
-  width: 300px;
-  margin-left: 15%;
-  margin-bottom: 5px;
-}
-
-.addButton {
-  padding: 3px 25px 3px 25px;
-  border: 1px solid;
-  box-shadow: 2px 4px #888;
 }
 
 .removeButton {

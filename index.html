@@ -11,31 +11,33 @@
 </head>
 <body>
     <div class="container mt-4">
-        <h3 class="display-5 text-center">
+        <h3 id="myheader" class="display-4 text-center">
             All awesome books
         </h3>
-        <table id="books-container" class="table table-striped mt-5">
+        <table id="books-container" class="table table-striped mt-5 border border-dark border-5 md-5">
             <tbody id="booksList">
 
             </tbody>
         </table>        
-        <div class="separator">
+        <div id="form-separator" class="separator">
             <hr>
         </div>
-        <div class="form-title">
-            Add a new book
-        </div>
-        <div class="addBook-container">
+        <form id="book-form">
+            <h2 class="form-title center">
+                Add a new book
+            </h2>
             <div>
-                <input type="text" id="addTitle" class="book_title" placeholder="Title" required><br>
-            </div>
-            <div>
-                <input type="text" id="addAuthor" class="book_author" placeholder="Author" required><br>
-            </div>
-            <div class="bnt-position">
-                <input type="submit" id="addBook" class="addButton" value="Add">
-            </div>
-        </div>               
+                <div class="form-group">
+                    <input type="text" id="addTitle" class="form-control border border-dark border-5 md-5" placeholder="Title" required><br>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="addAuthor" class="form-control border border-dark border-5 md-5" placeholder="Author" required><br>
+                </div>
+                <div class="bnt-position">
+                    <input type="submit" id="addBook" class="btn border border-dark border-5 md-5" value="Add">
+                </div>
+            </div>   
+        </form>
     </div>
     <script src="main.js"></script>
 </body>

@@ -39,11 +39,15 @@ class Library {
       objBook.id = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
       objBook.title = addTitle.value;
       objBook.author = addAuthor.value;
-      this.books.push(objBook);
-      localStorage.setItem('booksList', JSON.stringify(this.books));
-      Library.addBookToList(objBook);
-      addTitle.value = '';
-      addAuthor.value = '';
+      if (addTitle.value === '' || addAuthor.value === '') {
+        Library.showAlert('Please fill in all fields', 'danger');
+      } else {
+        this.books.push(objBook);
+        localStorage.setItem('booksList', JSON.stringify(this.books));
+        Library.addBookToList(objBook);
+        addTitle.value = '';
+        addAuthor.value = '';
+      }
     }
   }
 
@@ -63,6 +67,15 @@ class Library {
       elem.parentElement.parentElement.remove();
       localStorage.setItem('booksList', JSON.stringify(newBooks));
     }
+  }
+
+  static showAlert(message, className) {
+    const myheader = document.querySelector('#myheader');
+    const msg = document.createElement('P');
+    msg.className = `alert alert-${className}`;
+    msg.innerHTML = message;
+    myheader.appendChild(msg);
+    setTimeout(() => document.querySelector('.alert').remove(), 3000);
   }
 }
 
