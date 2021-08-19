@@ -20,7 +20,7 @@ class Library {
     }
   }
 
-  static addBookToList(book) {        
+  static addBookToList(book) {
     const row = document.createElement('tr');
     row.innerHTML = `
     <td>"${book.title}" by ${book.author} </td>
@@ -53,9 +53,8 @@ class Library {
       this.books = [];
     } else {
       const row = elem.parentElement.parentElement.innerHTML;
-      const fields = row.split('<td>');      
+      const fields = row.split('<td>');
       const titleName = fields[1].split('"');
-      console.log(titleName[1]);
       newBooks.forEach((book, index) => {
         if (book.title === titleName[1]) {
           newBooks.splice(index, 1);
