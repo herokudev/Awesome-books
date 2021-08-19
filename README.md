@@ -28,6 +28,12 @@ Kingsley McSimon Ogbonna
 
 [Live Demo Link](https://herokudev.github.io/Awesome-books/)
 
+
+## Getting Started
+
+To get a local copy up and running follow these simple example steps. You can either download the zip file, or clone the repository from [here](https://github.com/herokudev/Awesome-books/tree/style-core-elements). After you can open the index.html file to load the website locally.
+
+
 ## Authors
 
 👤 **Author1** (Github: Herokudev)

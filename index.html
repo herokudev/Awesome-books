@@ -4,27 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <title>Awesome books project</title>
 </head>
 <body>
-    <section class="booksCollection">
-        <h2>Awesome Books</h2>
-        <div id="booksList">
-            <template id="book" class="myBook">
-                <p id="bookName">Lorem Ipsum</p>
-                <p id="bookAuthor">Testeroo Testyy</p>
-                <button id="removeBook">Remove</button>
-                <hr id="bookLine">
-            </template>
+    <div class="container mt-4">
+        <h3 class="display-5 text-center">
+            All awesome books
+        </h3>
+        <table id="books-container" class="table table-striped mt-5">
+            <tbody id="booksList">
+
+            </tbody>
+        </table>        
+        <div class="separator">
+            <hr>
         </div>
-        <br><br>
-    </section>
-    <section class="addBook">
-        <input type="text" id="addTitle" name="book_title" placeholder="Title" required><br><br>
-        <input type="text" id="addAuthor" name="book_author" placeholder="Author" required><br><br>
-        <input type="submit" id="addBook" value="Add">
-    </section>
+        <div class="form-title">
+            Add a new book
+        </div>
+        <div class="addBook-container">
+            <div>
+                <input type="text" id="addTitle" class="book_title" placeholder="Title" required><br>
+            </div>
+            <div>
+                <input type="text" id="addAuthor" class="book_author" placeholder="Author" required><br>
+            </div>
+            <div class="bnt-position">
+                <input type="submit" id="addBook" class="addButton" value="Add">
+            </div>
+        </div>               
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
