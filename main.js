@@ -23,9 +23,8 @@ class Library {
   static addBookToList(book) {        
     const row = document.createElement('tr');
     row.innerHTML = `
-    <td>${book.author}</td> 
-    <td>${book.title}</td>
-    <td><a href="#" class="btn removeButton text-rigth d-flex align-items-end">Remove</a></td>
+    <td>"${book.title}" by ${book.author} </td>
+    <td><a href="#" class="btn btn-danger btn-sm delete text-center remove-book ms-auto bg-white border border-2 border-dark text-dark px-1 d-flex align-items-end">Remove</a></td>    
     `;
     booksList.appendChild(row);
   }
@@ -54,10 +53,11 @@ class Library {
       this.books = [];
     } else {
       const row = elem.parentElement.parentElement.innerHTML;
-      const fields = row.split('<');
-      const authorName = fields[1].slice(3, fields[1].length);
+      const fields = row.split('<td>');      
+      const titleName = fields[1].split('"');
+      console.log(titleName[1]);
       newBooks.forEach((book, index) => {
-        if (book.author === authorName) {
+        if (book.title === titleName[1]) {
           newBooks.splice(index, 1);
         }
       });
