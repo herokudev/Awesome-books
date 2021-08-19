@@ -71,12 +71,12 @@ class Library {
 
   static showAlert(message, className) {
     const myheader = document.querySelector('#myheader');
-    var msg = document.createElement("P");
+    let msg = document.createElement('P');
     msg.className = `alert alert-${className}`;
     msg.innerHTML = message;
     myheader.appendChild(msg);
     setTimeout(() => document.querySelector('.alert').remove(), 3000);
-  }  
+  }
 }
 
 const myLibrary = new Library();
