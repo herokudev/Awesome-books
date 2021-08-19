@@ -1,6 +1,5 @@
 /* eslint-disable max-classes-per-file */
 const booksList = document.querySelector('#booksList');
-const book = document.querySelector('#book');
 const addTitle = document.querySelector('#addTitle');
 const addAuthor = document.querySelector('#addAuthor');
 const btnAddBook = document.querySelector('#addBook');
@@ -17,19 +16,18 @@ class Library {
       this.books = [];
       localStorage.setItem('booksList', JSON.stringify(this.books));
     } else {
-      this.books = newBooks;
-      this.books.forEach((book) => {
-        const div = document.createElement('div');
-        div.classList.add('myBook');
-        div.innerHTML = `
-      <h5>${book.title}</h5>  
-      <p>${book.author}</p>  
-      <button class="remove">remove</button>
-      <hr>
-      `;
-        booksList.appendChild(div);
-      });
+      newBooks.forEach((book) => Library.addBookToList(book));
     }
+  }
+
+  static addBookToList(book) {        
+    const row = document.createElement('tr');
+    row.innerHTML = `
+    <td>${book.author}</td> 
+    <td>${book.title}</td>
+    <td><a href="#" class="btn removeButton text-rigth d-flex align-items-end">Remove</a></td>
+    `;
+    booksList.appendChild(row);
   }
 
   addBook() {
@@ -44,32 +42,26 @@ class Library {
       objBook.author = addAuthor.value;
       this.books.push(objBook);
       localStorage.setItem('booksList', JSON.stringify(this.books));
-      const temp1 = book.content;
-      const book1 = document.importNode(temp1, true);
-      const bookTitle1 = book1.querySelector('#bookName');
-      const bookAuthor1 = book1.querySelector('#bookAuthor');
-      bookTitle1.textContent = addTitle.value;
-      bookAuthor1.textContent = addAuthor.value;
-      booksList.appendChild(book1);
+      Library.addBookToList(objBook);
       addTitle.value = '';
       addAuthor.value = '';
     }
   }
 
   removeBook(elem) {
-    if (elem.classList.contains('remove')) {
-      elem.parentElement.remove();
-    }
     const newBooks = JSON.parse(localStorage.getItem('booksList'));
     if (newBooks === null) {
       this.books = [];
     } else {
-      this.books = newBooks;
+      const row = elem.parentElement.parentElement.innerHTML;
+      const fields = row.split('<');
+      const authorName = fields[1].slice(3, fields[1].length);
       newBooks.forEach((book, index) => {
-        if (book.author === elem.previousElementSibling.textContent) {
+        if (book.author === authorName) {
           newBooks.splice(index, 1);
         }
       });
+      elem.parentElement.parentElement.remove();
       localStorage.setItem('booksList', JSON.stringify(newBooks));
     }
   }
