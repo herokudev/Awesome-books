@@ -3,6 +3,13 @@ const booksList = document.querySelector('#booksList');
 const addTitle = document.querySelector('#addTitle');
 const addAuthor = document.querySelector('#addAuthor');
 const btnAddBook = document.querySelector('#addBook');
+const showDateTime = document.querySelector('#localDate');
+const navList = document.querySelector('#nav-list');
+const navAdd = document.querySelector('#nav-add');
+const navContact = document.querySelector('#nav-contact');
+const sectionList = document.querySelector('#section0');
+const sectionAdd = document.querySelector('#section1');
+const sectionContact = document.querySelector('#section2');
 const objBook = { id: '', title: '', author: '' };
 
 class Library {
@@ -40,11 +47,12 @@ class Library {
       objBook.title = addTitle.value;
       objBook.author = addAuthor.value;
       if (addTitle.value === '' || addAuthor.value === '') {
-        Library.showAlert('Please fill in all fields', 'danger');
+        Library.showAlert('Please fill in all fields.', 'danger');
       } else {
         this.books.push(objBook);
         localStorage.setItem('booksList', JSON.stringify(this.books));
         Library.addBookToList(objBook);
+        Library.showAlert('Book added complete.', 'success');
         addTitle.value = '';
         addAuthor.value = '';
       }
@@ -70,18 +78,39 @@ class Library {
   }
 
   static showAlert(message, className) {
-    const myheader = document.querySelector('#myheader');
+    const myheader = document.querySelector('#localDate');
     const msg = document.createElement('P');
     msg.className = `alert alert-${className}`;
     msg.innerHTML = message;
     myheader.appendChild(msg);
     setTimeout(() => document.querySelector('.alert').remove(), 3000);
   }
+
+  static showActiveSection(sectionID) {
+      if (sectionID === 0) {
+        sectionList.style.display = 'block';
+        sectionAdd.style.display = 'none';
+        sectionContact.style.display = 'none';
+      } else {
+        if (sectionID === 1) {
+          sectionList.style.display = 'none';
+          sectionAdd.style.display = 'block';
+          sectionContact.style.display = 'none';
+        } else {
+          sectionList.style.display = 'none';
+          sectionAdd.style.display = 'none';
+          sectionContact.style.display = 'block';
+        }        
+      }
+  }
 }
 
 const myLibrary = new Library();
 
 document.addEventListener('DOMContentLoaded', () => {
+  const resul = luxon.DateTime.now().toFormat("ff");
+  showDateTime.innerHTML = resul;
+  Library.showActiveSection(0); 
   myLibrary.displayBooks();
 });
 
@@ -91,4 +120,16 @@ btnAddBook.addEventListener('click', () => {
 
 booksList.addEventListener('click', (e) => {
   myLibrary.removeBook(e.target);
+});
+
+navList.addEventListener('click', (e) => {
+  Library.showActiveSection(0);  
+});
+
+navAdd.addEventListener('click', (e) => {
+  Library.showActiveSection(1);
+});
+
+navContact.addEventListener('click', (e) => {
+  Library.showActiveSection(2);
 });

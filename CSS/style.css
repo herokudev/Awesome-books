@@ -2,7 +2,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 
 body {
@@ -59,4 +58,27 @@ h2 {
   display: flex;
   justify-content: flex-end;
   padding-right: 20%;
+}
+
+#localDate {
+  text-align: end;
+  padding: 5px;
+  margin-left: 15px;
+  height: auto;
+  width: 98%;
+}
+
+#section0 {
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+#section1 {
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+#section2 {
+  padding-top: 45px;
+  padding-bottom: 45px;
 }
