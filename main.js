@@ -71,7 +71,7 @@ class Library {
 
   static showAlert(message, className) {
     const myheader = document.querySelector('#myheader');
-    let msg = document.createElement('P');
+    const msg = document.createElement('P');
     msg.className = `alert alert-${className}`;
     msg.innerHTML = message;
     myheader.appendChild(msg);
