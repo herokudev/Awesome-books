@@ -4,3 +4,59 @@
   padding: 0;
   list-style: none;
 }
+
+body {
+  background-color: white;
+}
+
+.border {
+  border: solid 1px black;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.center > h1,
+h2 {
+  text-align: center;
+}
+
+.form-in {
+  width: 30vw;
+  padding: 1em;
+}
+
+.form-group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  width: 60%;
+}
+
+#books-container {
+  border: 3px gray solid;
+  width: 65%;
+  margin-left: 15%;
+}
+
+.separator {
+  width: 10%;
+  margin-left: 38%;
+}
+
+.removeButton {
+  border: 1px solid;
+  box-shadow: 2px 4px #888;
+  margin-left: 0;
+  width: 75px;
+}
+
+.bnt-position {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20%;
+}
