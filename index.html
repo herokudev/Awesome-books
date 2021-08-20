@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2/build/global/luxon.min.js"></script>
     <title>Awesome books project</title>
@@ -14,8 +13,8 @@
     <nav class="d-flex justify-content-between border border-2 border-dark p-1 w-100">
         <a id="nav-home" href="#" class="text-decoration-none text-dark fw-bold fs-6">Awesome Books</a>
         <ul class="d-flex list-unstyled m-0 align-items-center">
-          <li><a id="nav-list" class="links text-decoration-none text-dark fs-6 fw-bold px-2" href="#">List</a></li>
-          <li><a id="nav-add" class="links text-decoration-none text-dark fs-6 fw-bold px-2" href="#">Add new</a></li>
+          <li><a id="nav-list" class="links link-separator text-decoration-none text-dark fs-6 fw-bold px-2" href="#">List</a></li>
+          <li><a id="nav-add" class="links link-separator text-decoration-none text-dark fs-6 fw-bold px-2" href="#">Add new</a></li>
           <li><a id="nav-contact" class="text-decoration-none text-dark fs-6 fw-bold px-1" href="#">Contact</a></li>
         </ul>
       </nav>  
@@ -25,7 +24,7 @@
         <h3 id="myheader" class="display-4 text-center">
             All awesome books
         </h3>
-        <table id="books-container" class="table table-striped mt-5 border border-dark border-5 md-5">
+        <table id="books-container" class="table table-striped mt-5 border border-dark border-5 mb-5">
             <tbody id="booksList">
 
             </tbody>
@@ -61,8 +60,8 @@
           </ul>
         </div>
     </div>
-    <footer class="border border-2 border-dark mt-auto px-1">
-        <h2 class="fs-6 fw-bold">Copyright &copy; <script>document.write(new Date().getFullYear())</script> All Rights Reserved</h2>
+    <footer class="border border-2 border-dark px-1 footer-bottom">
+        <h2 class="fs-6 fw-bold footer-left">Copyright &copy; <script>document.write(new Date().getFullYear())</script> All Rights Reserved</h2>
     </footer>    
   
     <script src="main.js"></script>   
