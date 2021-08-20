@@ -4,24 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2/build/global/luxon.min.js"></script>
     <title>Awesome books project</title>
 </head>
-<body>
-    <div class="container mt-4">
+<body>    
+    <nav class="d-flex justify-content-between border border-2 border-dark p-1 w-100">
+        <a id="nav-home" href="#" class="text-decoration-none text-dark fw-bold fs-6">Awesome Books</a>
+        <ul class="d-flex list-unstyled m-0 align-items-center">
+          <li><a id="nav-list" class="links link-separator text-decoration-none text-dark fs-6 fw-bold px-2" href="#">List</a></li>
+          <li><a id="nav-add" class="links link-separator text-decoration-none text-dark fs-6 fw-bold px-2" href="#">Add new</a></li>
+          <li><a id="nav-contact" class="text-decoration-none text-dark fs-6 fw-bold px-1" href="#">Contact</a></li>
+        </ul>
+      </nav>  
+    <br>
+    <div class="date">hello....</div>
+    <div id="section0" class="container mt-4">
         <h3 id="myheader" class="display-4 text-center">
             All awesome books
         </h3>
-        <table id="books-container" class="table table-striped mt-5 border border-dark border-5 md-5">
+        <table id="books-container" class="table table-striped mt-5 border border-dark border-5 mb-5">
             <tbody id="booksList">
 
             </tbody>
         </table>        
-        <div id="form-separator" class="separator">
-            <hr>
-        </div>
+    </div>
+    <div id="section1" class="container mt-4">
         <form id="book-form">
             <h2 class="form-title center">
                 Add a new book
@@ -39,6 +48,23 @@
             </div>   
         </form>
     </div>
-    <script src="main.js"></script>
+    <div id="section2" class="container mt-4">
+        <h2 class="text-center fw-bold">Contact Information</h2>
+        <div class="contact-info d-flex flex-column align-items-center">
+          <p>Do you have any questions or just want to say hello? You can reach out to us</p>
+          <ul class="contact-details">
+            <li>Central America Base:</li>
+            <li>Our email: mail@mail.com.gt</li>
+            <li>Our Phone: +502 6578124</li>
+            <li>Our Address: Nameless Street, Numberless House, Guatemala</li>
+          </ul>
+        </div>
+    </div>
+    <footer class="border border-2 border-dark px-1 footer-bottom">
+        <h2 class="fs-6 fw-bold footer-left">Copyright &copy; <script>document.write(new Date().getFullYear())</script> All Rights Reserved</h2>
+    </footer>    
+  
+    <script src="main.js"></script>   
+    <script src="date.js"></script>  
 </body>
 </html>
