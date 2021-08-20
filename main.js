@@ -92,14 +92,14 @@ class Library {
       sectionAdd.style.display = 'none';
       sectionContact.style.display = 'none';
     } else if (sectionID === 1) {
-        sectionList.style.display = 'none';
-        sectionAdd.style.display = 'block';
-        sectionContact.style.display = 'none';
+      sectionList.style.display = 'none';
+      sectionAdd.style.display = 'block';
+      sectionContact.style.display = 'none';
     } else {
       sectionList.style.display = 'none';
       sectionAdd.style.display = 'none';
       sectionContact.style.display = 'block';
-    }    
+    }
   }
 }
 
