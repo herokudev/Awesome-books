@@ -87,30 +87,30 @@ class Library {
   }
 
   static showActiveSection(sectionID) {
-      if (sectionID === 0) {
-        sectionList.style.display = 'block';
-        sectionAdd.style.display = 'none';
+    if (sectionID === 0) {
+      sectionList.style.display = 'block';
+      sectionAdd.style.display = 'none';
+      sectionContact.style.display = 'none';
+    } else {
+      if (sectionID === 1) {
+        sectionList.style.display = 'none';
+        sectionAdd.style.display = 'block';
         sectionContact.style.display = 'none';
       } else {
-        if (sectionID === 1) {
-          sectionList.style.display = 'none';
-          sectionAdd.style.display = 'block';
-          sectionContact.style.display = 'none';
-        } else {
-          sectionList.style.display = 'none';
-          sectionAdd.style.display = 'none';
-          sectionContact.style.display = 'block';
-        }        
+        sectionList.style.display = 'none';
+        sectionAdd.style.display = 'none';
+        sectionContact.style.display = 'block';
       }
+    }
   }
 }
 
 const myLibrary = new Library();
 
 document.addEventListener('DOMContentLoaded', () => {
-  const resul = luxon.DateTime.now().toFormat("ff");
+  const resul = luxon.DateTime.now().toFormat('ff');
   showDateTime.innerHTML = resul;
-  Library.showActiveSection(0); 
+  Library.showActiveSection(0);
   myLibrary.displayBooks();
 });
 
@@ -122,14 +122,14 @@ booksList.addEventListener('click', (e) => {
   myLibrary.removeBook(e.target);
 });
 
-navList.addEventListener('click', (e) => {
-  Library.showActiveSection(0);  
+navList.addEventListener('click', () => {
+  Library.showActiveSection(0);
 });
 
-navAdd.addEventListener('click', (e) => {
+navAdd.addEventListener('click', () => {
   Library.showActiveSection(1);
 });
 
-navContact.addEventListener('click', (e) => {
+navContact.addEventListener('click', () => {
   Library.showActiveSection(2);
 });
