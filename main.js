@@ -106,8 +106,6 @@ class Library {
 const myLibrary = new Library();
 
 document.addEventListener('DOMContentLoaded', () => {
-  const resul = luxon.DateTime.now().toFormat('ff');
-  showDateTime.innerHTML = resul;
   Library.showActiveSection(0);
   myLibrary.displayBooks();
 });
