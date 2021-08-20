@@ -3,7 +3,6 @@ const booksList = document.querySelector('#booksList');
 const addTitle = document.querySelector('#addTitle');
 const addAuthor = document.querySelector('#addAuthor');
 const btnAddBook = document.querySelector('#addBook');
-const showDateTime = document.querySelector('#localDate');
 const navList = document.querySelector('#nav-list');
 const navAdd = document.querySelector('#nav-add');
 const navContact = document.querySelector('#nav-contact');

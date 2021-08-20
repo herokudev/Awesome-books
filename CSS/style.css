@@ -82,3 +82,8 @@ h2 {
   padding-top: 45px;
   padding-bottom: 45px;
 }
+
+.date {
+  margin-right: 20px;
+  text-align: right;
+}
